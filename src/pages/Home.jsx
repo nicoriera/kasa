@@ -1,0 +1,17 @@
+import { Link } from "react-router";
+
+function Home() {
+  return (
+    <div>
+      <h1>Home</h1>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/a-propos">A Propos</Link>
+        <Link to="/fiche-logement/1">Fiche Logement</Link>
+        <Link to="/404">404</Link>
+      </nav>
+    </div>
+  );
+}
+
+export { Home };
