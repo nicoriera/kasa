@@ -1,0 +1,28 @@
+@use "variables" as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $padding;
+
+  img {
+    width: $logo-width;
+    height: $logo-height;
+  }
+
+  nav {
+    display: flex;
+    gap: $padding;
+
+    .header-link {
+      text-decoration: none;
+      color: inherit;
+      font-weight: $font-weight-bold;
+
+      &.active {
+        text-decoration: underline;
+      }
+    }
+  }
+}

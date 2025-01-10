@@ -1,13 +1,28 @@
-import { Link } from "react-router";
+import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.svg";
+import "../styles/header.scss";
 
 function Header() {
   return (
-    <div className="flex justify-between items-center p-4 ">
+    <div className="header">
       <img src={logo} alt="Logo" />
-      <nav className="flex gap-4">
-        <Link to="/">Accueil</Link>
-        <Link to="/a-propos">A Propos</Link>
+      <nav>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "header-link active" : "header-link"
+          }
+          to="/"
+        >
+          Accueil
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "header-link active" : "header-link"
+          }
+          to="/a-propos"
+        >
+          A Propos
+        </NavLink>
       </nav>
     </div>
   );

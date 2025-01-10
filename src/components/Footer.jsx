@@ -1,8 +1,9 @@
 import logoWhite from "../assets/logo_white.svg";
+import "../styles/footer.scss";
 
 function Footer() {
   return (
-    <div className=" p-4 fixed bottom-0 w-full flex flex-col gap-4 bg-black text-white justify-center items-center">
+    <div className="footer">
       <img src={logoWhite} alt="Logo" />
       <p>© 2020 Kasa. All rights reserved</p>
     </div>
