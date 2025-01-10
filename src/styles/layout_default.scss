@@ -1,0 +1,11 @@
+@use "variables" as *;
+.layout-default {
+  background-color: $background-color;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .layout-default-content {
+    flex: 1;
+  }
+}

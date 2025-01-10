@@ -1,0 +1,24 @@
+@use "variables" as *;
+.footer {
+  padding: $padding;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: $padding;
+  background-color: $footer-background-color;
+  color: $footer-text-color;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: $logo-width;
+    height: $logo-height;
+  }
+
+  p {
+    font-size: $font-size-large;
+    font-weight: $font-weight-medium;
+  }
+}

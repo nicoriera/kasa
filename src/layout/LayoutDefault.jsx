@@ -1,13 +1,13 @@
 import PropTypes from "prop-types";
-
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import "../styles/layout_default.scss";
 
 function LayoutDefault({ children }) {
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="layout-default">
       <Header />
-      {children}
+      <div className="layout-default-content">{children}</div>
       <Footer />
     </div>
   );

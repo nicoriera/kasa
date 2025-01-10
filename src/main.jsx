@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { Router } from "./routes/index";
-import "./index.css";
+import "./styles/index.scss";
 
 const root = createRoot(document.getElementById("root"));
 
