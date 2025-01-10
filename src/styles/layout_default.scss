@@ -2,10 +2,13 @@
 .layout-default {
   background-color: $background-color;
   min-height: 100vh;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
 
   .layout-default-content {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 }

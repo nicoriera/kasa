@@ -2,7 +2,6 @@ const locationService = {
   fetchLocations: async () => {
     try {
       const response = await fetch("/data.json");
-      console.log("response", response);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }

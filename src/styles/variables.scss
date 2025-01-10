@@ -1,12 +1,21 @@
 // Couleurs
 $background-color: #ffffff; // Equivalent de bg-gray-100
 $footer-background-color: black;
+$card-container-background-color: #f6f6f6;
 $footer-text-color: white;
 $card-background-color: #ff5f5f;
+$banner-background-color: black;
 $header-link-color: #000000;
 
 // Espacements
 $padding: 1rem;
+
+// Taille de la card
+$card-width: 340px;
+$card-height: 340px;
+
+// Border radius
+$border-radius-card-container: 25px;
 
 // Tailles d'image
 $logo-width: 122px;
@@ -14,9 +23,16 @@ $logo-height: 39px;
 
 // Typographie
 $font-family: "Montserrat", sans-serif;
+
+$font-size-banner: 48px;
 $font-size-large: 24px;
 $font-size-medium: 18px;
 $font-size-small: 12px;
+
 $font-weight-bold: 700;
 $font-weight-medium: 500;
 $font-weight-light: 300;
+
+// Taille de la card mobile
+$card-width-mobile: 335px;
+$card-height-mobile: 255px;

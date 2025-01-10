@@ -13,12 +13,10 @@ function Card({ locations }) {
           key={location.id}
           onClick={() => navigate(`/fiche-logement/${location.id}`)}
         >
-          <div>
-            <img src={location.pictures[0]} alt={location.title} />
-          </div>
-          <div className="overlay"></div>
-          <div className="text">
-            <h2>{location.title}</h2>
+          <img src={location.pictures[0]} alt={location.title} />
+
+          <div className="card-text">
+            <p>{location.title}</p>
           </div>
         </div>
       ))}
@@ -29,9 +27,9 @@ function Card({ locations }) {
 Card.propTypes = {
   locations: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
-      image: PropTypes.string.isRequired,
+      pictures: PropTypes.arrayOf(PropTypes.string).isRequired,
     })
   ).isRequired,
 };

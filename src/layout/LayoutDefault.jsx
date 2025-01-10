@@ -5,11 +5,13 @@ import "../styles/layout_default.scss";
 
 function LayoutDefault({ children }) {
   return (
-    <div className="layout-default">
-      <Header />
-      <div className="layout-default-content">{children}</div>
-      <Footer />
-    </div>
+    <>
+      <div className="layout-default">
+        <Header />
+        <div className="layout-default-content">{children}</div>
+        <Footer />
+      </div>
+    </>
   );
 }
 
