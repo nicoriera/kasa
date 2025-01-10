@@ -16,10 +16,12 @@ function Home() {
     fetchData();
   }, []);
   return (
-    <div>
-      <Banner />
-      <Card locations={locations} />
-    </div>
+    <>
+      <div className="home">
+        <Banner />
+        <Card locations={locations} />
+      </div>
+    </>
   );
 }
 

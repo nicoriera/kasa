@@ -1,6 +1,11 @@
+import "../styles/banner.scss";
+
 function Banner() {
   return (
-    <div className="w-[1240px] h-[223px] opacity-60 mix-blend-darken bg-black rounded-[25px]"></div>
+    <div className="banner">
+      <div className="overlay"></div>
+      <p className="banner-text">Chez vous, partout et ailleurs</p>
+    </div>
   );
 }
 

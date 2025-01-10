@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: $padding;
+  padding: 45px 100px;
 
   img {
     width: $logo-width;
@@ -13,16 +13,30 @@
 
   nav {
     display: flex;
-    gap: $padding;
+    gap: 40px;
 
     .header-link {
       text-decoration: none;
       color: inherit;
-      font-weight: $font-weight-bold;
 
       &.active {
         text-decoration: underline;
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 15px;
+
+    nav {
+      gap: 10px;
+    }
+  }
+
+  img {
+    width: 145px;
+    height: 47px;
   }
 }
