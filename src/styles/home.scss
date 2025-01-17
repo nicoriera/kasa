@@ -1,18 +1,12 @@
 @use "variables" as *;
 
-.home {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding: 45px 100px;
-}
-
 .card-container {
   display: inline-flex;
   flex-wrap: wrap;
   width: 100%;
   height: 100%;
   padding: 40px;
+  margin-top: 40px;
   justify-content: center;
   gap: 50px;
   background-color: $card-container-background-color;

@@ -4,10 +4,10 @@
   position: relative;
   display: flex;
   justify-content: center;
+  height: 223px;
   align-items: center;
   border-radius: $border-radius-card-container;
   background-color: $banner-background-color;
-  background-image: url("../assets/banner-image.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -44,5 +44,13 @@
     p {
       font-size: $font-size-medium;
     }
+  }
+}
+
+@media (max-width: 425px) {
+  .banner {
+    padding: 20px 10px;
+    height: 111px;
+    border-radius: 10px;
   }
 }
