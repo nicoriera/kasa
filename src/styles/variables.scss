@@ -9,6 +9,7 @@ $header-link-color: #000000;
 
 // Espacements
 $padding: 1rem;
+$dropdown-padding-horizontal: 10px;
 
 // Taille de la card
 $card-width: 340px;
@@ -16,10 +17,12 @@ $card-height: 340px;
 
 // Border radius
 $border-radius-card-container: 25px;
+$border-radius-dropdown: 5px;
 
 // Tailles d'image
 $logo-width: 122px;
 $logo-height: 39px;
+$dropdown-icon-size: 20px;
 
 // Typographie
 $font-family: "Montserrat", sans-serif;
@@ -36,3 +39,8 @@ $font-weight-light: 300;
 // Taille de la card mobile
 $card-width-mobile: 335px;
 $card-height-mobile: 255px;
+
+// Transitions
+$transition-duration-short: 0.3s;
+$transition-duration-long: 0.5s;
+$transition-timing-function: ease-in-out;

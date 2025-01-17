@@ -1,7 +1,7 @@
 @use "variables" as *;
 .layout-default {
   background-color: $background-color;
-  min-height: 100vh;
+  min-height: 100dvh;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -9,6 +9,24 @@
   .layout-default-content {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    gap: 40px;
+    padding: 45px 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout-default {
+    .layout-default-content {
+      padding: 20px 20px;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .layout-default {
+    .layout-default-content {
+      padding: 20px 10px;
+      min-height: 70dvh;
+    }
   }
 }

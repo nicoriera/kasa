@@ -1,0 +1,125 @@
+@use "variables" as *;
+
+@mixin size($width) {
+  width: $width;
+}
+
+.dropdown-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+
+  .dropdown {
+    position: relative;
+    width: 100%;
+    border-radius: $border-radius-dropdown;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    margin: 10px 0;
+
+    &.large {
+      @include size(80%);
+    }
+
+    &.medium {
+      @include size(60%);
+    }
+
+    &.small {
+      @include size(100%);
+    }
+
+    .dropdown-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 0 $dropdown-padding-horizontal;
+      border-radius: $border-radius-dropdown;
+      color: $footer-text-color;
+      background-color: $card-background-color;
+      cursor: pointer;
+
+      img {
+        width: $dropdown-icon-size;
+        height: $dropdown-icon-size;
+
+        &.open {
+          transform: rotate(180deg);
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      transition: border-radius $transition-duration-short
+        $transition-timing-function;
+
+      &.open {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+
+    .dropdown-content {
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      padding: 0 $dropdown-padding-horizontal;
+      transition: max-height $transition-duration-long
+          $transition-timing-function,
+        opacity $transition-duration-long $transition-timing-function,
+        padding $transition-duration-long $transition-timing-function,
+        border-radius $transition-duration-short $transition-timing-function;
+
+      &.open {
+        max-height: 500px;
+        opacity: 1;
+        padding: 10px;
+        background-color: $card-container-background-color;
+        border-bottom-left-radius: $border-radius-dropdown;
+        border-bottom-right-radius: $border-radius-dropdown;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .dropdown-container {
+    .large {
+      @include size(80%);
+    }
+
+    .medium {
+      @include size(60%);
+    }
+
+    .small {
+      @include size(40%);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .dropdown-container {
+    width: 100%;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-header {
+    padding: 0;
+  }
+
+  .dropdown-content {
+    padding: 0;
+  }
+}
