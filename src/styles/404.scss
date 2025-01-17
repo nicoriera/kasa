@@ -1,0 +1,60 @@
+@use "variables" as *;
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 65dvh;
+  justify-content: flex-start;
+  gap: 60px;
+
+  .not-found-title {
+    font-size: 288px;
+    font-weight: 700;
+    margin: 0;
+    color: $not-found-title-color;
+  }
+
+  .not-found-text {
+    font-size: 28px;
+    font-weight: 500;
+    color: $primary-color;
+    margin: 0;
+  }
+
+  .not-found-link {
+    font-size: 18px;
+    font-weight: 500;
+    color: $tertiary-color;
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .not-found {
+    height: 75dvh;
+    text-align: center;
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 425px) {
+  .not-found {
+    height: 80dvh;
+    display: flex;
+    padding: 0 20px;
+    justify-content: center;
+    flex-direction: column;
+    gap: 80px;
+    align-items: center;
+    text-align: center;
+    .not-found-title {
+      font-size: 96px;
+    }
+
+    .not-found-text {
+      font-size: 18px;
+    }
+  }
+}
