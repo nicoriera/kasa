@@ -28,6 +28,19 @@ function Dropdown({ title, content }) {
     setIsOpen(!isOpen);
   };
 
+  const renderContent = () => {
+    if (Array.isArray(content)) {
+      return (
+        <ul>
+          {content.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+      );
+    }
+    return <p>{content}</p>;
+  };
+
   return (
     <div className={`dropdown ${sizeClass}`}>
       <div
@@ -38,7 +51,7 @@ function Dropdown({ title, content }) {
         <img src={arrow} alt="arrow" className={isOpen ? "open" : ""} />
       </div>
       <div className={`dropdown-content ${isOpen ? "open" : ""}`}>
-        <p>{content}</p>
+        {renderContent()}
       </div>
     </div>
   );
@@ -46,7 +59,10 @@ function Dropdown({ title, content }) {
 
 Dropdown.propTypes = {
   title: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
+  content: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ]).isRequired,
   size: PropTypes.string.isRequired,
 };
 

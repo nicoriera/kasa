@@ -12,6 +12,11 @@ const locationService = {
       return [];
     }
   },
+
+  fetchLocationById: async (id) => {
+    const locations = await locationService.fetchLocations();
+    return locations.find((location) => location.id === id);
+  },
 };
 
 export { locationService };

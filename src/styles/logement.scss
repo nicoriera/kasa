@@ -1,0 +1,61 @@
+@use "variables.scss" as *;
+
+.logement {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  .logement-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .logement-tags-rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logement-title-host-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .logement-title-container {
+      display: flex;
+      flex-direction: column;
+
+      .logement-title {
+        font-size: 36px;
+        font-weight: 500;
+        color: $primary-color;
+        margin: 0;
+      }
+
+      .logement-location {
+        font-size: 18px;
+        font-weight: 500;
+        margin: 0;
+      }
+    }
+
+    .logement-host {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      gap: 10px;
+
+      p {
+        font-size: 18px;
+        font-weight: 500;
+
+        color: $primary-color;
+      }
+    }
+  }
+}

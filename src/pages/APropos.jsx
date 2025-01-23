@@ -12,7 +12,7 @@ function APropos() {
   return (
     <div className="a-propos">
       <Banner backgroundImage={bannerImage} />
-      <div className="dropdown-container">
+      <div className="dropdown-container vertical">
         <Dropdown
           title="Fiabilité"
           content="Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes."
