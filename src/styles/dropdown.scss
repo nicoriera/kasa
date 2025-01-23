@@ -4,7 +4,8 @@
   width: $width;
 }
 
-.dropdown-container {
+.dropdown-container,
+.dropdown-container-logement {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -90,6 +91,32 @@
   }
 }
 
+.dropdown-container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px;
+
+  &.horizontal {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .dropdown {
+      width: 50%;
+    }
+  }
+
+  &.vertical {
+    flex-direction: column;
+    align-items: stretch;
+
+    .dropdown {
+      width: 100%;
+    }
+  }
+}
+
 @media (max-width: 1024px) {
   .dropdown-container {
     .large {
@@ -121,5 +148,13 @@
 
   .dropdown-content {
     padding: 0;
+  }
+
+  .dropdown-container.horizontal {
+    flex-direction: column;
+
+    .dropdown {
+      width: 100%;
+    }
   }
 }

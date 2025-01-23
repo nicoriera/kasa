@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import { Home } from "../pages/Home";
 import { APropos } from "../pages/APropos";
-import { FicheLogement } from "../pages/FicheLogement";
+import { Logement } from "../pages/Logement";
 import { NotFound } from "../pages/404";
 import { LayoutDefault } from "../layout/LayoutDefault";
 
@@ -29,7 +29,7 @@ const Router = () => {
           path="/fiche-logement/:id"
           element={
             <LayoutDefault>
-              <FicheLogement />
+              <Logement />
             </LayoutDefault>
           }
         />

@@ -1,0 +1,20 @@
+@use "variables.scss" as *;
+
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  background-color: $primary-color;
+  color: $secondary-color;
+  padding: 5px 20px;
+  border-radius: 20px;
+  font-weight: $font-weight-bold;
+
+  &:hover {
+    background-color: $secondary-color;
+    color: $primary-color;
+  }
+}
