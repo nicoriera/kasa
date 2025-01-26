@@ -5,20 +5,28 @@
   flex-direction: column;
   gap: 40px;
 
-  .logement-container {
+  &-container {
     display: flex;
     flex-direction: column;
     gap: 40px;
   }
 
-  .logement-tags-rating {
+  &-tags-rating {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    &.desktop {
+      display: flex;
+    }
+
+    &.mobile {
+      display: none;
+    }
   }
 
-  .logement-title-host-container {
+  &-title-host-container {
     margin-top: 20px;
     display: flex;
     flex-direction: row;
@@ -28,33 +36,76 @@
     .logement-title-container {
       display: flex;
       flex-direction: column;
-
-      .logement-title {
-        font-size: 36px;
-        font-weight: 500;
-        color: $primary-color;
-        margin: 0;
-      }
-
-      .logement-location {
-        font-size: 18px;
-        font-weight: 500;
-        margin: 0;
-      }
     }
 
-    .logement-host {
+    .logement-title {
+      font-size: 36px;
+      font-weight: 500;
+      color: $primary-color;
+      margin: 0;
+    }
+
+    .logement-location {
+      font-size: 18px;
+      font-weight: 500;
+      margin: 0;
+    }
+  }
+
+  &-rating-host-container-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &-rating-host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &-host {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    p {
+      font-size: 18px;
+      font-weight: 500;
+      color: $primary-color;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .logement {
+    &-container {
+      flex-direction: column;
+      gap: 0px;
+    }
+
+    &-title-host-container {
       display: flex;
-      flex-direction: row;
-      align-items: center;
+      flex-direction: column;
+    }
 
-      gap: 10px;
+    &-rating-host-container-right {
+      width: 100%;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
 
-      p {
-        font-size: 18px;
-        font-weight: 500;
+    &-tags-rating {
+      flex-direction: column;
 
-        color: $primary-color;
+      &.desktop {
+        display: none;
+      }
+
+      &.mobile {
+        display: flex;
+        margin-top: 20px;
       }
     }
   }

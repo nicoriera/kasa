@@ -39,21 +39,48 @@
     background-color: transparent;
     cursor: pointer;
 
+    img {
+      width: 24px;
+      height: 24px;
+    }
+
     &.previous {
       left: 0;
-
       transform: rotate(-90deg);
     }
 
     &.next {
       right: 0;
-
       transform: rotate(90deg);
     }
 
     &:hover {
       opacity: 0.8;
       transition: opacity 0.3s ease-in-out;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .caroussel {
+    border-radius: 10px;
+
+    &-image {
+      border-radius: 10px;
+    }
+
+    &-button {
+      &.previous {
+        left: -10px;
+      }
+
+      &.next {
+        right: -10px;
+      }
+    }
+
+    &-counter {
+      display: none;
     }
   }
 }

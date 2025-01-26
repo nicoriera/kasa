@@ -58,15 +58,24 @@ function Logement() {
               <h1 className="logement-title">{logement.title}</h1>
               <p className="logement-location">{logement.location}</p>
             </div>
-            <div className="logement-host">
-              <p>{logement.host.name}</p>
-              <Avatar picture={logement.host.picture} />
+
+            <div className="logement-tags-rating mobile">
+              <Tag tag={logement.tags} />
+            </div>
+
+            <div className="logement-rating-host-container-right">
+              <div className="logement-host">
+                <p>{logement.host.name}</p>
+                <Avatar picture={logement.host.picture} />
+              </div>
+              <div className="logement-rating">
+                <Rating rating={logement.rating} />
+              </div>
             </div>
           </div>
 
-          <div className="logement-tags-rating">
+          <div className="logement-tags-rating desktop">
             <Tag tag={logement.tags} />
-            <Rating rating={logement.rating} />
           </div>
 
           <div className="logement-equipments">

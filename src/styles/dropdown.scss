@@ -71,16 +71,19 @@
     .dropdown-content {
       overflow: hidden;
       max-height: 0;
+      width: 0;
       opacity: 0;
       padding: 0 $dropdown-padding-horizontal;
       transition: max-height $transition-duration-long
           $transition-timing-function,
         opacity $transition-duration-long $transition-timing-function,
         padding $transition-duration-long $transition-timing-function,
+        width $transition-duration-long $transition-timing-function,
         border-radius $transition-duration-short $transition-timing-function;
 
       &.open {
         max-height: 500px;
+        width: 100%;
         opacity: 1;
         padding: 10px;
         background-color: $card-container-background-color;
