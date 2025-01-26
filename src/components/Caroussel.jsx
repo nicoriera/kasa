@@ -57,8 +57,9 @@ function Caroussel({ pictures }) {
           className="caroussel-button previous"
           onClick={handlePreviousPicture}
           aria-label="Photo précédente"
+          type="button"
         >
-          <img src={arrow} alt="" key={arrow} />
+          <img src={arrow} alt="" />
         </button>
       )}
 
@@ -79,8 +80,9 @@ function Caroussel({ pictures }) {
           className="caroussel-button next"
           onClick={handleNextPicture}
           aria-label="Photo suivante"
+          type="button"
         >
-          <img src={arrow} alt="" key={arrow} />
+          <img src={arrow} alt="" />
         </button>
       )}
 
