@@ -1,10 +1,10 @@
 import "../styles/tag.scss";
 import PropTypes from "prop-types";
 
-function Tag({ tag }) {
+function Tag({ tags }) {
   return (
     <div className="tag-container">
-      {tag.map((tag) => (
+      {tags.map((tag) => (
         <span key={tag} className="tag">
           {tag}
         </span>
@@ -14,7 +14,7 @@ function Tag({ tag }) {
 }
 
 Tag.propTypes = {
-  tag: PropTypes.string.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export { Tag };
