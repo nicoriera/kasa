@@ -67,6 +67,10 @@
 
     &-image {
       border-radius: 10px;
+      height: 255px;
+      border: 1px solid red;
+      object-fit: cover;
+      object-position: center;
     }
 
     &-button {

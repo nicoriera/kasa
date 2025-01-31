@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { locationService } from "../api/location";
 import { Caroussel } from "../components/Caroussel";
@@ -17,34 +17,32 @@ function Logement() {
   const [logement, setLogement] = useState(null);
   const [pictures, setPictures] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         setIsLoading(true);
         const data = await locationService.fetchLocationById(id);
+        if (!data) {
+          navigate("/*");
+          return;
+        }
         setLogement(data);
-        // Utiliser directement les URLs des images du JSON
-        setPictures(data.pictures); // On utilise directement les URLs sans transformation
-      } catch (err) {
-        console.error("Fetch error:", err);
-        setError(err);
+        setPictures(data.pictures);
+      } catch {
+        navigate("/*");
       } finally {
         setIsLoading(false);
       }
     };
 
     fetchData();
-  }, [id]);
+  }, [id, navigate]);
 
   if (isLoading) {
     return <div>Chargement en cours...</div>;
-  }
-
-  if (error) {
-    return <div>Une erreur est survenue: {error.message}</div>;
   }
 
   return (
@@ -60,22 +58,36 @@ function Logement() {
             </div>
 
             <div className="logement-tags-rating mobile">
-              <Tag tag={logement.tags} />
+              <Tag tags={logement.tags} />
             </div>
 
             <div className="logement-rating-host-container-right">
               <div className="logement-host">
-                <p>{logement.host.name}</p>
+                <Rating
+                  rating={
+                    Number.isNaN(parseInt(logement.rating, 10))
+                      ? 0
+                      : parseInt(logement.rating, 10)
+                  }
+                />
+                <div className="logement-host-name">
+                  <p>{logement.host.name.split(" ")[0]}</p>
+                  <p>{logement.host.name.split(" ")[1]}</p>
+                </div>
                 <Avatar picture={logement.host.picture} />
-              </div>
-              <div className="logement-rating">
-                <Rating rating={logement.rating} />
               </div>
             </div>
           </div>
 
           <div className="logement-tags-rating desktop">
-            <Tag tag={logement.tags} />
+            <Tag tags={logement.tags} />
+            <Rating
+              rating={
+                Number.isNaN(parseInt(logement.rating, 10))
+                  ? 0
+                  : parseInt(logement.rating, 10)
+              }
+            />
           </div>
 
           <div className="logement-equipments">
