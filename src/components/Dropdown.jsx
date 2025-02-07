@@ -1,4 +1,4 @@
-import "../styles/dropdown.scss";
+import "./Dropdown.scss";
 import arrow from "../assets/arrow_back.svg";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-import "../styles/layout_default.scss";
+import "./LayoutDefault.scss";
 
 function LayoutDefault({ children }) {
   return (

@@ -1,4 +1,4 @@
-import "../styles/banner.scss";
+import "./Banner.scss";
 import PropTypes from "prop-types";
 
 function Banner({ backgroundImage, text }) {

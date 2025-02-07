@@ -1,4 +1,4 @@
-import "../styles/avatar.scss";
+import "./Avatar.scss";
 import PropTypes from "prop-types";
 
 function Avatar({ picture }) {
