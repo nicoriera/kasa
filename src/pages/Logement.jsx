@@ -7,15 +7,9 @@ import { Tag } from "../components/Tag";
 import { Avatar } from "../components/Avatar";
 import { Rating } from "../components/Rating";
 import "../styles/logement.scss";
-const size = {
-  large: "large",
-  medium: "medium",
-  small: "small",
-};
 
 function Logement() {
   const [logement, setLogement] = useState(null);
-  const [pictures, setPictures] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
   const navigate = useNavigate();
@@ -26,13 +20,13 @@ function Logement() {
         setIsLoading(true);
         const data = await locationService.fetchLocationById(id);
         if (!data) {
-          navigate("/*");
+          navigate("/404");
           return;
         }
         setLogement(data);
-        setPictures(data.pictures);
-      } catch {
-        navigate("/*");
+      } catch (error) {
+        console.error("Erreur lors du chargement du logement:", error);
+        navigate("/404");
       } finally {
         setIsLoading(false);
       }
@@ -41,71 +35,72 @@ function Logement() {
     fetchData();
   }, [id, navigate]);
 
+  const parseRating = (rating) => {
+    const parsedRating = parseInt(rating, 10);
+    return Number.isNaN(parsedRating) || parsedRating < 0 || parsedRating > 5
+      ? 0
+      : parsedRating;
+  };
+
   if (isLoading) {
-    return <div>Chargement en cours...</div>;
+    return <div className="loading">Chargement en cours...</div>;
   }
+
+  if (!logement) {
+    return null;
+  }
+
+  const {
+    title,
+    location,
+    tags,
+    rating,
+    host,
+    description,
+    equipments,
+    pictures,
+  } = logement;
+  const [firstName, lastName] = host.name.split(" ");
 
   return (
     <div className="logement">
-      {logement && (
-        <div key={logement.id} className="logement-container">
-          <Caroussel pictures={pictures} />
+      <div className="logement-container">
+        <Caroussel pictures={pictures} />
 
-          <div className="logement-title-host-container">
-            <div className="logement-title-container">
-              <h1 className="logement-title">{logement.title}</h1>
-              <p className="logement-location">{logement.location}</p>
-            </div>
+        <div className="logement-title-host-container">
+          <div className="logement-title-container">
+            <h1 className="logement-title">{title}</h1>
+            <p className="logement-location">{location}</p>
+          </div>
 
-            <div className="logement-tags-rating mobile">
-              <Tag tags={logement.tags} />
-            </div>
+          <div className="logement-tags-rating mobile">
+            <Tag tags={tags} />
+          </div>
 
-            <div className="logement-rating-host-container-right">
-              <div className="logement-host">
-                <Rating
-                  rating={
-                    Number.isNaN(parseInt(logement.rating, 10))
-                      ? 0
-                      : parseInt(logement.rating, 10)
-                  }
-                />
-                <div className="logement-host-name">
-                  <p>{logement.host.name.split(" ")[0]}</p>
-                  <p>{logement.host.name.split(" ")[1]}</p>
-                </div>
-                <Avatar picture={logement.host.picture} />
+          <div className="logement-rating-host-container-right">
+            <div className="logement-host">
+              <Rating rating={parseRating(rating)} />
+              <div className="logement-host-name">
+                <p>{firstName}</p>
+                <p>{lastName}</p>
               </div>
-            </div>
-          </div>
-
-          <div className="logement-tags-rating desktop">
-            <Tag tags={logement.tags} />
-            <Rating
-              rating={
-                Number.isNaN(parseInt(logement.rating, 10))
-                  ? 0
-                  : parseInt(logement.rating, 10)
-              }
-            />
-          </div>
-
-          <div className="logement-equipments">
-            <div className="dropdown-container horizontal">
-              <Dropdown
-                title="Description"
-                content={logement.description}
-                size={size.large}
-              />
-              <Dropdown
-                title="Équipements"
-                content={logement.equipments}
-                size={size.large}
-              />
+              <Avatar picture={host.picture} />
             </div>
           </div>
         </div>
-      )}
+
+        <div className="logement-tags-rating desktop">
+          <Tag tags={tags} />
+          <Rating rating={parseRating(rating)} />
+        </div>
+
+        <div className="logement-equipments">
+          <div className="dropdown-container horizontal">
+            <Dropdown title="Description" content={description} size="large" />
+            <Dropdown title="Équipements" content={equipments} size="large" />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -10,10 +10,24 @@ $not-found-title-color: #ff6060;
 $primary-color: #ff6060;
 $secondary-color: #ffffff;
 $tertiary-color: #000000;
+$overlay-color: rgba(0, 0, 0, 0.5);
+$gradient-card: linear-gradient(
+  180deg,
+  rgba(255, 255, 255, 0) 0%,
+  rgba(10.08, 10.08, 10.08, 0) 42%,
+  rgba(3.82, 3.82, 3.82, 0.2) 100%,
+  rgba(0, 0, 0, 0.5) 100%
+);
 
 // Espacements
 $padding: 1rem;
+$padding-desktop: 45px 100px;
+$padding-mobile: 20px;
 $dropdown-padding-horizontal: 10px;
+$gap-desktop: 40px;
+$gap-mobile: 20px;
+$gap-cards: 50px;
+$gap-cards-mobile: 20px;
 
 // Taille de la card
 $card-width: 340px;
@@ -21,7 +35,10 @@ $card-height: 340px;
 
 // Border radius
 $border-radius-card-container: 25px;
+$border-radius-card: 10px;
 $border-radius-dropdown: 5px;
+$border-radius-tag: 20px;
+$border-radius-mobile: 10px;
 
 // Tailles d'image
 $logo-width: 122px;
@@ -35,6 +52,8 @@ $font-size-banner: 48px;
 $font-size-large: 24px;
 $font-size-medium: 18px;
 $font-size-small: 12px;
+$font-size-404: 288px;
+$font-size-404-mobile: 96px;
 
 $font-weight-bold: 700;
 $font-weight-medium: 500;
@@ -44,7 +63,18 @@ $font-weight-light: 300;
 $card-width-mobile: 335px;
 $card-height-mobile: 255px;
 
+// Taille de la carrousel
+
 // Transitions
 $transition-duration-short: 0.3s;
 $transition-duration-long: 0.5s;
 $transition-timing-function: ease-in-out;
+
+// Shadows
+$box-shadow-banner: 0 0 10px rgba(0, 0, 0, 0.5);
+$text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+// Breakpoints
+$breakpoint-mobile: 425px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
