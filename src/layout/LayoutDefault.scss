@@ -1,4 +1,4 @@
-@use "variables" as *;
+@use "../styles/variables.scss" as *;
 .layout-default {
   background-color: $background-color;
   min-height: 100dvh;

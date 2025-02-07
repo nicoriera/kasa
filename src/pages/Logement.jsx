@@ -6,7 +6,7 @@ import { Dropdown } from "../components/Dropdown";
 import { Tag } from "../components/Tag";
 import { Avatar } from "../components/Avatar";
 import { Rating } from "../components/Rating";
-import "../styles/logement.scss";
+import "./Logement.scss";
 
 function Logement() {
   const [logement, setLogement] = useState(null);

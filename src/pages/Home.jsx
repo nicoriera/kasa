@@ -3,7 +3,7 @@ import { Banner } from "../components/Banner";
 import { useEffect, useState } from "react";
 import { locationService } from "../api/location";
 import bannerImage from "../assets/banner-image-home.png";
-import "../styles/home.scss";
+import "./Home.scss";
 
 function Home() {
   const [locations, setLocations] = useState([]);

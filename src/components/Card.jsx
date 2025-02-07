@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
-import "../styles/card.scss";
+import "./Card.scss";
 
 function Card({ locations }) {
   const navigate = useNavigate();

@@ -1,4 +1,4 @@
-import "../styles/rating.scss";
+import "./Rating.scss";
 import PropTypes from "prop-types";
 import { memo } from "react";
 

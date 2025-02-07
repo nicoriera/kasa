@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import "../styles/caroussel.scss";
+import "./Caroussel.scss";
 import arrow from "../assets/arrow_back.svg";
 
 function Caroussel({ pictures }) {
