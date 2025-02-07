@@ -34,6 +34,14 @@ const Router = () => {
           }
         />
         <Route
+          path="/404"
+          element={
+            <LayoutDefault>
+              <NotFound />
+            </LayoutDefault>
+          }
+        />
+        <Route
           path="*"
           element={
             <LayoutDefault>
