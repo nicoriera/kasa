@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "../pages/Home";
 import { APropos } from "../pages/APropos";
 import { Logement } from "../pages/Logement";
@@ -6,8 +6,11 @@ import { NotFound } from "../pages/404";
 import { LayoutDefault } from "../layout/LayoutDefault";
 
 const Router = () => {
+  // Déterminez le basename en fonction de l'environnement :
+  const basename = import.meta.env.DEV ? "/" : "/kasa";
+
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Routes>
         <Route
           path="/"
