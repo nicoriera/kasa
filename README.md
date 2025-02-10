@@ -80,37 +80,6 @@ Le projet inclut une configuration GitHub Actions (fichier `.github/workflows/ma
 - **`public/` :** Ressources statiques (images, icônes, etc.).
 - **`README.md` :** Ce fichier.
 
-## Exemple d'Intégration de React Router
-
-Le routage est géré dans le fichier `src/routes/index.jsx` :
-
-```jsx:src/routes/index.jsx
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "../pages/Home";
-import About from "../pages/About";
-
-export function Router() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-    </BrowserRouter>
-  );
-}
-```
-
-Le fichier `src/main.jsx` importe ce routeur pour initialiser l'application.
-
-## Exemple d'Utilisation du Composant Caroussel
-
-Le composant **Caroussel** (situé dans `src/components/Caroussel.jsx`) illustre comment afficher une galerie d'images avec :
-
-- **Affichage dynamique :** Les boutons de navigation (précédent/suivant) et le compteur ne s'affichent que si plusieurs images sont disponibles.
-- **Navigation par clic et via le clavier :** Gestion des événements `onClick` et `onKeyDown` pour une accessibilité renforcée.
-- **Animation :** Possibilité d'appliquer une animation (exemple : effet "fade") lors du changement d'image.
-
 ## Ressources Supplémentaires
 
 - [Documentation Vite](https://vitejs.dev/)
