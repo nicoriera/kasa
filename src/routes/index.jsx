@@ -6,11 +6,8 @@ import { NotFound } from "../pages/404";
 import { LayoutDefault } from "../layout/LayoutDefault";
 
 const Router = () => {
-  // Déterminez le basename en fonction de l'environnement :
-  const basename = import.meta.env.DEV ? "/" : "/kasa";
-
   return (
-    <BrowserRouter basename={basename}>
+    <BrowserRouter basename="/kasa">
       <Routes>
         <Route
           path="/"
