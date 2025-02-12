@@ -1,7 +1,7 @@
 const locationService = {
   fetchLocations: async () => {
     try {
-      const response = await fetch("/data/data.json");
+      const response = await fetch("/kasa/data/data.json");
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
