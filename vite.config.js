@@ -13,10 +13,10 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      "/api-images": {
+      "/kasa/api-images": {
         target: "https://s3-eu-west-1.amazonaws.com",
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api-images/, ""),
+        rewrite: (path) => path.replace(/^\/kasa\/api-images/, ""),
       },
     },
   },
