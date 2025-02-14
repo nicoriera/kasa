@@ -1,7 +1,7 @@
 .rating {
   display: flex;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     svg {
       width: 32px;
       height: 32px;
@@ -17,7 +17,7 @@
     height: 48px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     svg {
       width: 32px;
       height: 32px;
