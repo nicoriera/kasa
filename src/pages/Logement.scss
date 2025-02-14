@@ -69,21 +69,6 @@
     .rating.mobile {
       display: none;
     }
-
-    @media (max-width: 768px) {
-      flex-direction: row-reverse;
-      justify-content: space-between;
-      width: 100%;
-      margin-top: 16px;
-
-      .rating.mobile {
-        display: flex;
-      }
-
-      .logement-host {
-        margin: 0;
-      }
-    }
   }
 
   &-host {
@@ -119,9 +104,36 @@
       display: flex;
     }
   }
+
+  @media screen and (max-width: 1024px) {
+    &-tags-rating {
+      &.desktop {
+        display: none;
+      }
+
+      &.mobile {
+        display: flex;
+      }
+    }
+
+    &-rating-host-container-right {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 16px;
+
+      .rating.mobile {
+        display: flex;
+      }
+
+      .logement-host {
+        margin: 0;
+      }
+    }
+  }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .logement {
     &-container {
       flex-direction: column;
