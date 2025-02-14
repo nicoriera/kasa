@@ -1,3 +1,26 @@
 .rating {
   display: flex;
+
+  @media (max-width: 768px) {
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+.rating-logement {
+  display: flex;
+
+  svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  @media (max-width: 768px) {
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
 }

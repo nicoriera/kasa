@@ -6,7 +6,17 @@ const locationService = {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const locations = await response.json();
-      return locations;
+      const modifiedData = locations.map((item) => ({
+        ...item,
+        cover: item.cover.replace(
+          "https://s3-eu-west-1.amazonaws.com",
+          "/s3-images"
+        ),
+        pictures: item.pictures.map((pic) =>
+          pic.replace("https://s3-eu-west-1.amazonaws.com", "/s3-images")
+        ),
+      }));
+      return modifiedData;
     } catch (error) {
       console.error("Failed to fetch locations:", error);
       return [];

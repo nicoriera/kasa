@@ -40,3 +40,9 @@
     height: 47px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .nav-text {
+    text-transform: uppercase;
+  }
+}

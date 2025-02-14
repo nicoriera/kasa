@@ -15,7 +15,7 @@ function Header() {
           }
           to="/"
         >
-          Accueil
+          <span className="nav-text">Accueil</span>
         </NavLink>
         <NavLink
           className={({ isActive }) =>
@@ -23,7 +23,7 @@ function Header() {
           }
           to="/a-propos"
         >
-          A Propos
+          <span className="nav-text">A Propos</span>
         </NavLink>
       </nav>
     </div>
