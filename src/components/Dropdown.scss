@@ -89,6 +89,15 @@
         background-color: $card-container-background-color;
         border-bottom-left-radius: $border-radius-dropdown;
         border-bottom-right-radius: $border-radius-dropdown;
+
+        ul {
+          padding: 5px;
+          margin: 0;
+        }
+
+        li {
+          list-style: none;
+        }
       }
     }
   }

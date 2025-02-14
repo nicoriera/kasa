@@ -79,19 +79,25 @@ function Logement() {
 
           <div className="logement-rating-host-container-right">
             <div className="logement-host">
-              <Rating rating={parseRating(rating)} />
-              <div className="logement-host-name">
-                <p>{firstName}</p>
-                <p>{lastName}</p>
+              <div className="logement-host-container">
+                <div className="logement-host-name">
+                  <p>{firstName}</p>
+                  <p>{lastName}</p>
+                </div>
+                <Avatar picture={host.picture} />
               </div>
-              <Avatar picture={host.picture} />
+            </div>
+            <div className="rating mobile">
+              <Rating rating={parseRating(rating)} />
             </div>
           </div>
         </div>
 
         <div className="logement-tags-rating desktop">
           <Tag tags={tags} />
-          <Rating rating={parseRating(rating)} />
+          <div className="rating">
+            <Rating rating={parseRating(rating)} />
+          </div>
         </div>
 
         <div className="logement-equipments">
